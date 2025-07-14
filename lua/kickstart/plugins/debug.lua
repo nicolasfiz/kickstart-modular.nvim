@@ -81,6 +81,55 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
+    dap.adapters['pwa-node'] = {
+      type = 'server',
+      host = '127.0.0.1',
+      port = 8123,
+      executable = {
+        command = 'js-debug-adapter',
+      },
+    }
+
+    for _, language in ipairs { 'typescript', 'javascript' } do
+      dap.configurations[language] = {
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Launch file',
+          program = '${file}',
+          cwd = '${workspaceFolder}',
+          runtimeExecutable = 'node',
+        },
+        {
+          type = 'pwa-node',
+          request = 'attach',
+          name = 'Attach',
+          processId = require('dap.utils').pick_process,
+          cwd = vim.fn.getcwd(),
+          sourceMaps = true,
+        },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'npm run dev',
+          runtimeExecutable = 'npm',
+          runtimeArgs = { 'run', 'dev' },
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+          restart = true,
+          sourceMaps = true,
+          resolveSourceMapLocations = {
+            '${workspaceFolder}/**',
+            '!**/node_modules/**',
+          },
+          -- env = {
+          --   NODE_ENV = 'development',
+          -- },
+          outputCapture = 'std',
+        },
+      }
+    end
+
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
@@ -88,13 +137,38 @@ return {
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
-      handlers = {},
+      handlers = {
+        delve = function(config)
+          table.insert(config.configurations, 1, {
+            args = function()
+              return vim.split(vim.fn.input 'args> ', ' ')
+            end,
+            type = 'delve',
+            name = 'Debug Go file',
+            request = 'launch',
+            program = '${file}',
+            outputMode = 'remote',
+          })
+          table.insert(config.configurations, 1, {
+            args = function()
+              return vim.split(vim.fn.input 'args> ', ' ')
+            end,
+            type = 'delve',
+            name = 'Debug Go file with args',
+            request = 'launch',
+            program = '${file}',
+            outputMode = 'remote',
+          })
+          require('mason-nvim-dap').default_setup(config)
+        end,
+      },
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'js-debug-adapter',
       },
     }
 
