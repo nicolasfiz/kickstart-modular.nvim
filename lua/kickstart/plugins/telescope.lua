@@ -60,9 +60,30 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
+        defaults = {
+          file_ignore_patterns = {
+            '%.git/',
+            '%.git$',
+            'node_modules/',
+            '%.cache/',
+            -- '%.vscode/',
+            '%.idea/',
+            '%.DS_Store',
+            '%.log$',
+            '%.tmp$',
+            '%.swp$',
+            '%.bak$',
+            'build/',
+            'dist/',
+            'coverage/',
+            '%.nyc_output/',
+          },
+        },
         pickers = {
           find_files = {
             hidden = true,
+            no_ignore = true,
+            no_ignore_parent = true,
           },
         },
         extensions = {
