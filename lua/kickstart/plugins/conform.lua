@@ -31,6 +31,8 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        javascript = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
