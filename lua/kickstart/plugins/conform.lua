@@ -33,6 +33,8 @@ return {
         lua = { 'stylua' },
         javascript = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         python = { 'ruff', stop_after_first = true },
         sh = { 'shfmt' },
         json = { 'prettierd', 'prettier', stop_after_first = true },
