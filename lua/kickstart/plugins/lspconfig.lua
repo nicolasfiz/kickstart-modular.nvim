@@ -243,7 +243,7 @@ return {
         ts_ls = {},
         bashls = {},
         helm_ls = {},
-
+        tailwindcss = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },

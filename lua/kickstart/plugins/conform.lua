@@ -31,14 +31,14 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
-        typescript = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+        javascript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
+        typescript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         python = { 'ruff', stop_after_first = true },
         sh = { 'shfmt' },
         json = { 'prettierd', 'prettier', stop_after_first = true },
-        yaml = { 'yamlfmt' },
+        -- yaml = { 'yamlfix' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

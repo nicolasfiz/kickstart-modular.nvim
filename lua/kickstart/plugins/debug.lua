@@ -132,6 +132,25 @@ return {
           -- },
           outputCapture = 'std',
         },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'npm run prod',
+          runtimeExecutable = 'npm',
+          runtimeArgs = { 'run', 'debug:prod' },
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+          restart = true,
+          sourceMaps = true,
+          resolveSourceMapLocations = {
+            '${workspaceFolder}/**',
+            '!**/node_modules/**',
+          },
+          -- env = {
+          --   NODE_ENV = 'development',
+          -- },
+          outputCapture = 'std',
+        },
       }
     end
 
