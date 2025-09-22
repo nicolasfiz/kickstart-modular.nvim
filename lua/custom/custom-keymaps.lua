@@ -25,10 +25,13 @@ vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zz')
 vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>zz')
 
 -- Diagnostics
-vim.keymap.set('n', '<C-e>', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror message' })
+vim.keymap.set('n', '<leader>we', vim.diagnostic.open_float, { desc = '[W]Show Diagnostic [E]rror message' })
 vim.keymap.set('n', '[d', function()
   vim.diagnostic.jump { count = -1, float = true }
 end, { desc = 'Jump to previus diagnostic' })
 vim.keymap.set('n', ']d', function()
   vim.diagnostic.jump { count = 1, float = true }
 end, { desc = 'Jump to next diagnostic' })
+
+-- Lsp buf format
+vim.keymap.set('n', '<leader>l', vim.lsp.buf.format)

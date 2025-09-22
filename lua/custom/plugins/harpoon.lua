@@ -18,7 +18,7 @@ return {
     end, { desc = 'Harpoon: add buffer to list' })
     vim.keymap.set('n', '<leader>e', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = 'Harpoon: toggle quick menu' })
 
     vim.keymap.set('n', '<leader>1', function()
       harpoon:list():select(1)

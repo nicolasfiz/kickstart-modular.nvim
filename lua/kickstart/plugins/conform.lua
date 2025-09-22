@@ -35,9 +35,18 @@ return {
         typescript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
-        python = { 'ruff', stop_after_first = true },
+        python = { 'black' },
+        -- python = {
+        --   'ruff',
+        --   -- To fix auto-fixable lint errors.
+        --   'ruff_fix',
+        --   -- To run the Ruff formatter.
+        --   'ruff_format',
+        --   -- To organize the imports.
+        --   'ruff_organize_imports',
+        -- },
         sh = { 'shfmt' },
-        json = { 'prettierd', 'prettier', stop_after_first = true },
+        json = { 'jq', 'prettierd', 'prettier', stop_after_first = true },
         -- yaml = { 'yamlfix' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
