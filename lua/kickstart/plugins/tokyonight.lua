@@ -12,7 +12,7 @@ return {
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
-        -- transparent = true,
+        transparent = true,
       }
 
       -- Load the colorscheme here.

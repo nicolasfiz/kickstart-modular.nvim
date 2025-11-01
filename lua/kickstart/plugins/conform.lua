@@ -35,7 +35,8 @@ return {
         typescript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
-        python = { 'black' },
+        python = { 'ruff' },
+        -- python = { 'black' },
         -- python = {
         --   'ruff',
         --   -- To fix auto-fixable lint errors.
@@ -47,6 +48,7 @@ return {
         -- },
         sh = { 'shfmt' },
         json = { 'jq', 'prettierd', 'prettier', stop_after_first = true },
+        markdown = { 'prettierd', 'prettier' },
         -- yaml = { 'yamlfix' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },

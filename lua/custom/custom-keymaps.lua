@@ -35,3 +35,17 @@ end, { desc = 'Jump to next diagnostic' })
 
 -- Lsp buf format
 vim.keymap.set('n', '<leader>l', vim.lsp.buf.format)
+
+-- Replace word
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Replace word with confirmation
+vim.keymap.set('n', '<leader>rc', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]])
+
+-- Replace word in visual mode
+vim.keymap.set('v', '<leader>r', function()
+  vim.cmd 'normal! "vy'
+  local selected = vim.fn.getreg 'v'
+  local escaped = vim.fn.escape(selected, '/\\')
+  vim.fn.feedkeys(':s/' .. escaped .. '/' .. escaped .. '/g' .. string.rep(vim.api.nvim_replace_termcodes('<Left>', true, false, true), 3))
+end, { desc = 'Replace visual selection' })

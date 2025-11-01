@@ -13,7 +13,7 @@ return {
     scratch = { enabled = false },
     terminal = { enabled = false },
     toggle = { enabled = false },
-    zen = { enabled = false },
+    zen = { enabled = true },
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
@@ -80,6 +80,13 @@ return {
       end,
       desc = 'Git Browse',
       mode = { 'n', 'v' },
+    },
+    {
+      '<leader>z',
+      function()
+        Snacks.zen()
+      end,
+      desc = 'Toggle Zen Mode',
     },
   },
 }
