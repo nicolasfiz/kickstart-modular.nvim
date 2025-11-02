@@ -210,7 +210,8 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
-        ruff = {},
+        -- ruff = {},
+        pyright = {},
         -- pylsp = {
         --   settings = {
         --     pylsp = {

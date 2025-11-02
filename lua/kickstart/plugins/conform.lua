@@ -35,17 +35,15 @@ return {
         typescript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
-        python = { 'ruff' },
-        -- python = { 'black' },
-        -- python = {
-        --   'ruff',
-        --   -- To fix auto-fixable lint errors.
-        --   'ruff_fix',
-        --   -- To run the Ruff formatter.
-        --   'ruff_format',
-        --   -- To organize the imports.
-        --   'ruff_organize_imports',
-        -- },
+        python = {
+          'ruff',
+          -- To fix auto-fixable lint errors.
+          'ruff_fix',
+          -- To run the Ruff formatter.
+          'ruff_format',
+          -- To organize the imports.
+          'ruff_organize_imports',
+        },
         sh = { 'shfmt' },
         json = { 'jq', 'prettierd', 'prettier', stop_after_first = true },
         markdown = { 'prettierd', 'prettier' },
