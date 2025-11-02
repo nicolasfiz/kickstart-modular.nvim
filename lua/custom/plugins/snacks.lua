@@ -36,6 +36,12 @@ return {
             action = ":lua Snacks.dashboard.pick('live_grep')",
           },
           {
+            icon = '󱞁 ',
+            key = 'o',
+            desc = 'Obsidian Notes',
+            action = ':Obsidian quick_switch',
+          },
+          {
             icon = ' ',
             key = 'r',
             desc = 'Recent Files',
