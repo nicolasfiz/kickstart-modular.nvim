@@ -35,6 +35,21 @@ return {
       desc = 'Debug: Start/Continue',
     },
     {
+      '<F4>',
+      function()
+        require('dap').restart()
+      end,
+      desc = 'Debug: Start/Continue',
+    },
+    {
+      '<F6>',
+      function()
+        require('dap').close()
+        require('dapui').close()
+      end,
+      desc = 'Debug: Stop',
+    },
+    {
       '<F1>',
       function()
         require('dap').step_into()
@@ -243,6 +258,6 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
-    require('dap-python').setup()
+    require('dap-python').setup 'uv'
   end,
 }
