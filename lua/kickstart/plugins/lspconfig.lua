@@ -210,26 +210,29 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
-        -- ruff = {},
+        ruff = {},
         pyright = {},
         -- pylsp = {
         --   settings = {
         --     pylsp = {
         --       plugins = {
         --         -- formatter options
-        --         black = { enabled = true },
+        --         pylsp_black = { enabled = false },
+        --         black = { enabled = false },
         --         autopep8 = { enabled = false },
         --         yapf = { enabled = false },
         --         -- linter options
+        --         mccabe = { enabled = false },
         --         pylint = { enabled = true, executable = 'pylint' },
         --         pyflakes = { enabled = false },
         --         pycodestyle = { enabled = false },
         --         -- type checker
-        --         pylsp_mypy = { enabled = true },
+        --         pylsp_mypy = { enabled = false },
         --         -- auto-completion options
-        --         jedi_completion = { fuzzy = true },
+        --         jedi = { enabled = true },
+        --         jedi_completion = { enabled = true, fuzzy = true },
         --         -- import sorting
-        --         pyls_isort = { enabled = true },
+        --         pylsp_isort = { enabled = false },
         --       },
         --     },
         --   },
