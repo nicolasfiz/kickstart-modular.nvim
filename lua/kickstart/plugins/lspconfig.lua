@@ -211,7 +211,8 @@ return {
         -- clangd = {},
         gopls = {},
         ruff = {},
-        pyright = {},
+        -- pyright = {},
+        ty = {},
         -- pylsp = {
         --   settings = {
         --     pylsp = {

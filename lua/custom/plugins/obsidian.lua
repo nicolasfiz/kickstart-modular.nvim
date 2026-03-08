@@ -1,6 +1,7 @@
 return {
   'obsidian-nvim/obsidian.nvim',
   version = '*', -- recommended, use latest release instead of latest commit
+  enabled = false,
   lazy = false,
   -- enabled = function()
   --   -- Disable Obsidian when running from Oil Simple (to avoid path issues in Zed context)
