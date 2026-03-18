@@ -45,7 +45,7 @@ return {
           'ruff_organize_imports',
         },
         sh = { 'shfmt' },
-        json = { 'jq', 'prettierd', 'prettier', stop_after_first = true },
+        -- json = { 'jq', 'prettierd', 'prettier', stop_after_first = true },
         markdown = { 'prettierd', 'prettier' },
         -- yaml = { 'yamlfix' },
         -- Conform can also run multiple formatters sequentially

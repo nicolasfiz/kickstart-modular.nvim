@@ -23,6 +23,7 @@ return {
         'go',
         'python',
         'yaml',
+        'dockerfile',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
