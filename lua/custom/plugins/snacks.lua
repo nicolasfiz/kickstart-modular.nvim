@@ -4,6 +4,7 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    picker = { enabled = false },
     animate = { enabled = false },
     bufdelete = { enabled = false },
     git = { enabled = false },
@@ -13,7 +14,7 @@ return {
     scratch = { enabled = false },
     terminal = { enabled = false },
     toggle = { enabled = false },
-    zen = { enabled = true },
+    zen = { enabled = false },
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
@@ -27,13 +28,13 @@ return {
             icon = ' ',
             key = 'f',
             desc = 'Find File',
-            action = ":lua Snacks.dashboard.pick('files')",
+            action = ':Telescope find_files',
           },
           {
             icon = ' ',
             key = 'g',
             desc = 'Find Text',
-            action = ":lua Snacks.dashboard.pick('live_grep')",
+            action = ':Telescope live_grep',
           },
           {
             icon = '󱞁 ',
@@ -45,7 +46,7 @@ return {
             icon = ' ',
             key = 'r',
             desc = 'Recent Files',
-            action = ":lua Snacks.dashboard.pick('oldfiles')",
+            action = ':Telescope oldfiles',
           },
           { icon = ' ', key = 'G', desc = 'LazyGit', action = ':lua Snacks.lazygit() ' },
           { icon = ' ', key = 'B', desc = 'Git Browse', action = ':lua Snacks.gitbrowse()' },
@@ -53,7 +54,7 @@ return {
             icon = ' ',
             key = 'c',
             desc = 'Config',
-            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+            action = ":lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('config')})",
           },
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
           {

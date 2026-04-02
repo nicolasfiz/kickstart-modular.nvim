@@ -78,6 +78,7 @@ return {
             'coverage/',
             '%.nyc_output/',
             '%venv/',
+            '.next/',
           },
         },
         pickers = {

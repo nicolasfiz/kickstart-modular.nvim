@@ -51,7 +51,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- vim: ts=2 sts=2 sw=2 et
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<CR>')
 vim.keymap.set('n', '<leader>tp', '<cmd>tabprev<CR>')
 vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<CR>')
